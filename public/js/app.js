@@ -1843,18 +1843,221 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    pickFile: function pickFile() {
+      this.$refs.img.click();
+    },
+    filePicked: function filePicked(e) {
+      var _this = this;
+
+      var files = e.target.files;
+
+      if (files[0] !== undefined) {
+        this.imageName = files[0].name;
+
+        if (this.imageName.lastIndexOf(".") <= 0) {
+          return;
+        }
+
+        var fr = new FileReader();
+        fr.readAsDataURL(files[0]);
+        fr.addEventListener("load", function () {
+          _this.fullImage = fr.result;
+          _this.imageFile = files[0]; // this is an image file that can be sent to server...
+        });
+      } else {
+        this.imageFile = "";
+        this.imageUrl = "";
+      }
+    }
+  },
   data: function data() {
     return {
+      fullImage: "",
+      imageFile: "",
+      imageUrl: "",
       fullname: "Naveed Zahoor",
       job_title: "Teacher",
       tag_line: "Win and win are the only options here",
       phone_number: "090078601",
       email: "mymail@mymail.com",
       links: {
-        "facebook": "facebook.com",
-        "twitter": "twitter.com"
-      }
+        facebook: "facebook.com",
+        twitter: "twitter.com"
+      },
+      internships: {
+        intern1: {
+          title: "PHP Dev",
+          Employer: "Arfa Tower",
+          start_date: "May 2019",
+          end_date: "November 2019",
+          description: "No disc"
+        },
+        intern2: {
+          title: "Jquery Dev",
+          Employer: "No one",
+          start_date: "July 2018",
+          end_date: "December 2019",
+          description: "Some desc"
+        }
+      },
+      educations: {
+        edu1: {
+          school: "BZU",
+          degree: "BSIT",
+          start_date: "May 2019",
+          end_date: "December 2019",
+          description: "Completed My BS",
+          city: "Multan"
+        }
+      },
+      employeement_history: {
+        job: {
+          job_title: "Laravel Developer",
+          Employer: "Bluehorn tech",
+          start_date: "May, 2019",
+          end_date: "August, 2019",
+          city: "Lahore",
+          description: "Worked as Laravel Developer"
+        },
+        job1: {
+          job_title: "Laravel Developer",
+          Employer: "Bluehorn tech",
+          start_date: "May, 2019",
+          end_date: "August, 2019",
+          city: "Lahore",
+          description: "Worked as Laravel Developer"
+        }
+      },
+      skills: {
+        skill1: {
+          skill_name: "Laravel",
+          level: "5"
+        },
+        skill2: {
+          skill_name: "JQuery",
+          level: "8"
+        },
+        skill3: {
+          skill_name: "Vue",
+          level: "10"
+        },
+        skill4: {
+          skill_name: "Vue",
+          level: "20"
+        },
+        skill5: {
+          skill_name: "Vue",
+          level: "30"
+        }
+      },
+      languages: {
+        lang1: {
+          name: "Urdu",
+          level: 5
+        },
+        lang2: {
+          name: "English",
+          level: 50
+        }
+      },
+      hobbies: ["Cooking", "Writing", "Gaming"]
     };
   }
 });
@@ -6318,7 +6521,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.sheet {\n        border-color: black;\n        display: flex\n}\n.page{\n        display: flex\n}\n.first_column{\n        flex: 50%\n}\n.second_column{\n        flex: 50%\n}\n.widesheet{\n        position: relative;\n\tpadding: 5px 10px;\n\tbackground-color: white;\n\tmargin: 60px auto;\n\tfont: normal 12px/21px sans-serif;\n\tcolor: #444;\n}\n.wide { width: 80%;\n}\n.widesheet:before, .widesheet:after {\n\tcontent: '';\n\tposition: absolute;\n\tleft: 0;\n\tbox-shadow: 0 0 10px black;\n\tborder-radius: 50%;\n\twidth: 100%;\n\theight: 20px;\n\tdisplay: none;\n}\n\n", ""]);
+exports.push([module.i, "\n.flex {\n  display: flex;\n  margin-left: 3%;\n  margin-top: 1%;\n}\n.flex_wide {\n  flex: 70%;\n}\n.flex_narrow {\n  flex: 20%;\n}\n.sheet {\n  border-color: black;\n  display: flex;\n}\n.page {\n  display: flex;\n}\n.first_column {\n  flex: 80%;\n}\n.second_column {\n  flex: 50%;\n}\n.widesheet {\n  position: relative;\n  padding: 5px 10px;\n  background-color: white;\n  /* margin: 60px auto; */\n  font: normal 12px/21px sans-serif;\n  color: #444;\n}\n.wide {\n  width: 80%;\n}\n.widesheet:before,\n.widesheet:after {\n  content: \"\";\n  position: absolute;\n  left: 0;\n  box-shadow: 0 0 10px black;\n  border-radius: 50%;\n  width: 100%;\n  height: 20px;\n  display: none;\n}\n", ""]);
 
 // exports
 
@@ -37855,6 +38058,21 @@ var render = function() {
   return _c("div", { staticClass: "col-md-12 page" }, [
     _c("div", { staticClass: "col-md-5" }, [
       _c("div", { staticClass: "form-group" }, [
+        _c(
+          "button",
+          { staticClass: "btn btn-success", on: { click: _vm.pickFile } },
+          [_vm._v("Upload File")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          ref: "img",
+          staticStyle: { display: "none" },
+          attrs: { type: "file", accept: "image/*" },
+          on: { change: _vm.filePicked }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group" }, [
         _c("input", {
           directives: [
             {
@@ -37948,51 +38166,266 @@ var render = function() {
             }
           }
         })
-      ])
+      ]),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1)
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "col-md-6 widesheet wide bottom-shadow" }, [
-      _c("h4", [_vm._v(_vm._s(_vm.fullname))]),
-      _vm._v(" "),
-      _c("h6", [_vm._v(" " + _vm._s(_vm.job_title) + " ")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "sheet" }, [
-        _c("div", { staticClass: "first_column" }, [
-          _c("h4", [_vm._v(" Profile ")]),
-          _vm._v(" "),
-          _c("h6", [_vm._v(_vm._s(_vm.tag_line))])
+      _c("div", { staticClass: "flex" }, [
+        _c("div", { staticStyle: { flex: "0 1 10%" } }, [
+          _c("img", {
+            staticStyle: { height: "50px", width: "50px" },
+            attrs: { src: _vm.fullImage }
+          })
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "second_column" }, [
-          _c("div", [
-            _c("h4", [_vm._v("Details")]),
-            _vm._v(" "),
-            _c("h6", [_vm._v(_vm._s(_vm.phone_number))]),
-            _vm._v(" "),
-            _c("h6", [_vm._v(_vm._s(_vm.email))])
-          ]),
+        _c("div", { staticStyle: { flex: "50%" } }, [
+          _c("h4", [_vm._v(_vm._s(_vm.fullname))]),
+          _vm._v(" "),
+          _c("h6", [_vm._v(_vm._s(_vm.job_title))])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "flex" }, [
+        _c("div", { staticClass: "flex_wide" }, [
+          _c("h3", [_vm._v("Profile")]),
+          _vm._v("\n        " + _vm._s(_vm.tag_line) + "\n      ")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex_narrow" }, [
+          _c("h3", [_vm._v("Details")]),
+          _vm._v(
+            "\n        " +
+              _vm._s(_vm.phone_number) +
+              "\n        " +
+              _vm._s(_vm.email) +
+              "\n      "
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "flex" }, [
+        _c("div", { staticClass: "flex_wide" }, [
+          _c(
+            "div",
+            [
+              _c("h3", [_vm._v("Employement History")]),
+              _vm._v(" "),
+              _vm._l(_vm.employeement_history, function(jobs, index) {
+                return _c("div", { key: index }, [
+                  _c("h6", [
+                    _vm._v(
+                      _vm._s(jobs.job_title) +
+                        " at " +
+                        _vm._s(jobs.Employer) +
+                        ", " +
+                        _vm._s(jobs.city)
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      _vm._s(jobs.start_date) + " - " + _vm._s(jobs.end_date)
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(jobs.description))])
+                ])
+              })
+            ],
+            2
+          ),
           _vm._v(" "),
           _c(
             "div",
             [
-              _c("h4", [_vm._v(" Links ")]),
+              _c("h3", [_vm._v("Education")]),
               _vm._v(" "),
-              _vm._l(_vm.links, function(index, link) {
-                return _c("h6", { key: index }, [
-                  _c("a", { attrs: { href: index } }, [
-                    _vm._v(" " + _vm._s(link) + "  ")
-                  ])
+              _vm._l(_vm.educations, function(education, index) {
+                return _c("div", { key: index }, [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(education.degree) +
+                      ", " +
+                      _vm._s(education.school) +
+                      ", " +
+                      _vm._s(education.city) +
+                      "\n            "
+                  ),
+                  _c("p", [
+                    _vm._v(
+                      _vm._s(education.start_date) +
+                        " - " +
+                        _vm._s(education.end_date)
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(education.description))])
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            [
+              _c("h3", [_vm._v("Internships")]),
+              _vm._v(" "),
+              _vm._l(_vm.internships, function(internship, index) {
+                return _c("div", { key: index }, [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(internship.title) +
+                      " at " +
+                      _vm._s(internship.Employer) +
+                      "\n            "
+                  ),
+                  _c("p", [
+                    _vm._v(
+                      _vm._s(internship.start_date) +
+                        " - " +
+                        _vm._s(internship.end_date)
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(internship.description))])
                 ])
               })
             ],
             2
           )
-        ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "flex_narrow" },
+          [
+            _c("h3", [_vm._v("Skills")]),
+            _vm._v(" "),
+            _vm._l(_vm.skills, function(skill, index) {
+              return _c("div", { key: index }, [
+                _c("h6", [_vm._v(_vm._s(skill.skill_name))]),
+                _vm._v(" "),
+                _c("div", { staticClass: "progress" }, [
+                  _c("div", {
+                    staticClass: "progress-bar",
+                    style: "width:" + skill.level + "%",
+                    attrs: {
+                      role: "progressbar",
+                      "aria-valuenow": skill.level + "%",
+                      "aria-valuemin": "0",
+                      "aria-valuemax": "100"
+                    }
+                  })
+                ])
+              ])
+            }),
+            _vm._v(" "),
+            _c("h3", [_vm._v("Hobbies")]),
+            _vm._v(" "),
+            _vm._l(_vm.hobbies, function(hobby, index) {
+              return _c("h6", { key: index }, [_vm._v(_vm._s(hobby))])
+            }),
+            _vm._v(" "),
+            _c("h3", [_vm._v("Languages")]),
+            _vm._v(" "),
+            _vm._l(_vm.languages, function(lang, index) {
+              return _c("div", { key: index }, [
+                _c("h6", [_vm._v(_vm._s(lang.name))]),
+                _vm._v(" "),
+                _c("div", { staticClass: "progress" }, [
+                  _c("div", {
+                    staticClass: "progress-bar",
+                    style: "width:" + lang.level + "%",
+                    attrs: {
+                      role: "progressbar",
+                      "aria-valuenow": lang.level + "%",
+                      "aria-valuemin": "0",
+                      "aria-valuemax": "100"
+                    }
+                  })
+                ])
+              ])
+            })
+          ],
+          2
+        )
       ])
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("div", { staticClass: "collapse", attrs: { id: "collapseExample" } }, [
+        _c("div", { staticClass: "flex" }, [
+          _c("div", { staticClass: "flex_wide col-md-5" }, [
+            _c("label", [_vm._v("School")]),
+            _vm._v(" "),
+            _c("input", { staticClass: "form-control" })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex_wide col-md-5" }, [
+            _c("label", { attrs: { for: "" } }, [_vm._v("Degree")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "text" }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex" }, [
+          _c("div", { staticClass: "col-md-3" }, [
+            _c("label", { attrs: { for: "" } }, [_vm._v("Start Date")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "date", name: "", id: "" }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-3" }, [
+            _c("label", { attrs: { for: "" } }, [_vm._v("End Date")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "date", name: "", id: "" }
+            })
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c(
+        "a",
+        {
+          staticClass: "btn btn-primary",
+          attrs: {
+            "data-toggle": "collapse",
+            href: "#collapseExample",
+            role: "button",
+            "aria-expanded": "false",
+            "aria-controls": "collapseExample"
+          }
+        },
+        [_vm._v("Add Education")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -50406,8 +50839,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\resume\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\resume\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/null-byte/LaravelProjects/resume_vue_laravel/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/null-byte/LaravelProjects/resume_vue_laravel/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
