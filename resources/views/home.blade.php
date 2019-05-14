@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-                <resume-component></resume-component>
+                <resume-component :user="{{ Auth::user() }}"></resume-component>
 @endsection

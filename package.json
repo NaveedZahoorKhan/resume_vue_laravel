@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "html2canvas": "^1.0.0-rc.1"
+        "html2canvas": "^1.0.0-rc.1",
+        "vue-bootstrap-datetimepicker": "^5.0.1"
     }
 }
